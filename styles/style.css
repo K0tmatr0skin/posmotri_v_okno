@@ -44,6 +44,13 @@ button:focus {
   outline: none;
 }
 
+input {
+  border: none;
+  font-family: inherit;
+  color: inherit;
+  background-color: #1b1919;
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -77,13 +84,6 @@ button:focus {
 .button:focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 1px;
-}
-
-input {
-  border: none;
-  font-family: inherit;
-  color: inherit;
-  background-color: #1b1919;
 }
 
 .content {
@@ -125,7 +125,7 @@ input {
   align-items: start;
 }
 
-.search-form__fieldset-title  {
+.search-form__fieldset-title {
   font-size: 18px;
   font-weight: normal;
   margin-bottom: 5px;
@@ -140,7 +140,7 @@ input {
   cursor: pointer;
 }
 
-.search-form__label:hover .search-form__label-text  {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -207,7 +207,7 @@ input {
   position: relative;
   height: 298px;
   overflow-y: scroll;
-  overflow-x: hidden;  
+  overflow-x: hidden;
 }
 
 .content__list-item:not(:last-child) {
@@ -215,11 +215,36 @@ input {
 }
 
 .content__card-link {
+  margin: 2px;
+  padding: 2px;
+  display: block;
   text-decoration: none;
+}
+
+.content__card-link_current, .content__card-link:active {
+  background-color: #545050;
 }
 
 .content__card-link:visited {
   color: currentColor;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:hover .content__video-card-title {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content__card-link:focus-visible {
+  border: 1px solid currentColor;
 }
 
 .content__video-card {

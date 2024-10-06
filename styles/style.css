@@ -132,7 +132,7 @@ input {
 }
 
 .search-form__label {
-  display: inline-block;
+  display: flex;
   width: fit-content;
 }
 
@@ -164,22 +164,23 @@ input {
 
 .search-form__checkbox-list {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
-.search-form__pseudo-checkbox {
-  position: relative;
-  display: inline-block;
+.search-form__pseudo-checkbox {  
+  display: flex;
+  margin-top: 2px;
+  margin-right: 5px;
   border: 1px solid currentColor;
-  vertical-align: middle;
   width: 19px;
   height: 19px;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
-  position: absolute;
-  inset: 0;
+  display: inline-block;
   margin: auto;
+  box-sizing: content-box;
   content: '';
   width: 15px;
   height: 15px;

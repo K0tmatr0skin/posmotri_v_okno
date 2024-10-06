@@ -87,8 +87,8 @@ input {
 }
 
 .content {
-  padding: 133px 30px;
   width: 1140px;
+  margin: 133px 30px;
   display: flex;
   gap: 30px;
   align-items: end;

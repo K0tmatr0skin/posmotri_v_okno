@@ -13,6 +13,7 @@ html {
   block-size: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -88,7 +89,7 @@ input {
 
 .content {
   width: 1140px;
-  margin: 133px 30px;
+  margin: auto;
   display: flex;
   gap: 30px;
   align-items: end;

@@ -40,6 +40,10 @@ ol {
   list-style: none;
 }
 
+button:focus {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -52,10 +56,27 @@ ol {
 
 .button {
   font-family: inherit;
+  font-size: inherit;
   color: inherit;
   cursor: pointer;
   background-color: #1b1919;
   border: 1px solid currentColor;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.button:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
 }
 
 input {
@@ -115,18 +136,13 @@ input {
   width: fit-content;
 }
 
-.search-form__checkbox-list {
-  display: flex;
-  gap: 15px;
+.search-form__label:hover {
+  cursor: pointer;
 }
 
-.search-form__pseudo-checkbox {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  border: 1px solid currentColor;
-  width: 19px;
-  height: 19px;
+.search-form__label:hover .search-form__label-text  {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .search-form__textfield {
@@ -137,6 +153,43 @@ input {
   border-bottom: 1px solid currentColor;
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(input:focus-visible) {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  border: 1px solid currentColor;
+  vertical-align: middle;
+  width: 19px;
+  height: 19px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: currentColor;
+}
+
+.search-form__submit-button {
+  flex-grow: 1;
+  align-self: end;
+}
 
 .title {
   font-family: Oswald;
@@ -194,4 +247,8 @@ input {
 .content__video-card-thumbnail {
   height: 103px;
   width: 194px;
+}
+
+.more-button {
+  width: 100%;
 }
